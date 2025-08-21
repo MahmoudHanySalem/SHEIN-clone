@@ -1,0 +1,25 @@
+ .stars {
+     display: inline-flex;
+     gap: 1px;
+     vertical-align: middle;
+ }
+
+ .star {
+     width: 16px;
+     height: 16px;
+     display: inline-block;
+ }
+
+ /* Colors (match the screenshot’s gold) */
+ .star.full path,
+ .star.half .full-fill {
+     fill: #F6C33B;
+ }
+
+ /* filled gold */
+ .star.empty path,
+ .star.half .empty {
+     fill: #F0E6BF;
+ }
+
+ /* light gold for empty */

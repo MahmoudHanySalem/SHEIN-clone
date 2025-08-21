@@ -1,0 +1,171 @@
+<main>
+    <div class="dis-cards-cont">
+        <div class="dis-cards">
+            <div class="left-card">
+                <div class="top-left">
+                    <a [routerLink]="['/store']">
+                    <img src="assets\Screenshot 2025-08-20 155833.png" alt="discounted img">
+                    </a>
+                </div>
+                <div class="bot-left">
+                    <a [routerLink]="['/store']">  
+                        <img src="assets/Screenshot 2025-08-20 155848.png" alt="discounts">
+                    </a>
+                </div>
+            </div>
+            <div class="mid-card">
+                <swiper-container class="mySwiper" navigation="true" pagination="true" loop="true">
+                    <!-- Slide 1 -->
+                    <swiper-slide>
+                        <div class="">
+                            <div class="">
+                                <div class="">
+                                    <div class="">
+                                        <a [routerLink]="['/store']">
+                                            <img src="assets/Screenshot 2025-08-20 181418.png" class="swiper-img"
+                                                alt="Product 1">
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </swiper-slide>
+
+                    <!-- Slide 2 -->
+                    <swiper-slide>
+                        <div class="">
+                            <a [routerLink]="['/store']">
+                                <img src="assets/Screenshot 2025-08-20 222706.png" class="swiper-img" alt="Product 2">
+                            </a>
+                        </div>
+                    </swiper-slide>
+                    <!-- Slide 3 -->
+                    <swiper-slide>
+                        <div class="">
+                            <a [routerLink]="['/store']">
+                                <img src="assets/Screenshot 2025-08-20 222730.png" class="swiper-img" alt="Product 3">
+                            </a>
+                        </div>
+                    </swiper-slide>
+                    <!-- Slide 4 -->
+                    <swiper-slide>
+                        <div class="">
+                            <a [routerLink]="['/store']">
+                            <img src="assets/Screenshot 2025-08-20 222714.png" class="swiper-img" alt="Product 4">
+                            </a>
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+
+            </div>
+            <div class="right-card">
+                <a [routerLink]="['/store']" class="trend-link">
+                    <img src="assets/Screenshot 2025-08-20 163852.png" alt="trends img">
+                </a>
+                <div class="discont-items row row-cols-3 g-2">
+                    @for (product of products; track $index) {
+                    @if ($index<6) { <div class="dis-item col">
+                        <a [routerLink]="['/store']">
+                                <div class="item-card">
+                                
+                                    <div class="img-container">
+                                        <img [src]="product.image" [alt]="product.title">
+                                    </div>
+                                    <p>
+                                        #{{product.category}}
+                                    </p>
+                                </div>
+                                <span class="dis-item-price">
+                                    ${{product.price}}
+                                </span>
+                            </a>
+                </div>
+                }
+                }
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="categories-grid-cont mt-4">
+        <div class="container">
+            <!-- First row -->
+            <div class="row row-cols-7 g-2 cat-grid">
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230053.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230107.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230116.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230123.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230131.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230134.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230137.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Second row -->
+            <div class="row row-cols-7 g-2 mt-2 cat-grid">
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230142.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230145.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230148.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230450.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230452.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230455.png" alt=""/>
+                    </a>
+                </div>
+                <div class="col">
+                    <a [routerLink]="['/store']">
+                        <img src="assets/cat/Screenshot 2025-08-20 230458.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

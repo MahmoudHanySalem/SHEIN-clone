@@ -1,0 +1,109 @@
+nav{
+    border-bottom: 0.5px solid #dbdbdb;
+    
+}
+.nav-top{
+ background-image: url('../../../assets/image.png');
+ width: 100%;
+ height: 48px;
+ background-size: contain;
+}
+.mid-nav-cont{
+    display: flex;
+    justify-content: center;
+}
+.mid-nav{
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-between;
+    width: 94%;
+    align-items: center;
+}
+.input-cont{
+    display: flex;
+    width: 35%;
+    align-items: center;
+}
+.input-cont input{
+    background-color: #fff;
+    border: 1px solid #222;
+    width: 90%;
+    height: 36px;
+    color: #222;
+    font-size: 13px;
+    padding: 5px 10px;
+    padding-top: 3px;
+}
+.input-cont input:focus{
+    border: 1px solid #222;
+}
+.search-btn{
+    background-color: #222;
+    border: none;
+    height: 36px;
+    display: grid;
+    align-items: center;
+
+}
+.logos-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 12%;
+}
+.logos-box div{
+    width: 24px;
+    height: 24px;
+}
+.logos-box div button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+.logos-box div svg{
+    width: 24px !important;
+    height: 24px !important;
+}
+.bot-nav{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    margin-top: 15px;
+}
+.nav-list{
+    width: 95%;
+    height: 100%;
+}
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    height: 100%;
+}
+.nav-list ul li{
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+}
+.nav-list ul li:hover{
+    background-color: #dbdbdb;
+}
+.nav-list ul a{
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+}
+.nav-list ul button{
+    color: #222;
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+}
+.categories-btn svg{
+    transition: transform 0.3s ease-out;
+}
+.categories-btn-hoverd{
+    transform: rotate(180deg);
+}

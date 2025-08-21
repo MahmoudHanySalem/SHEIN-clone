@@ -1,0 +1,69 @@
+<div class="grid-master">
+  <div class="container mt-2 row row-cols-5 g-4">
+    @for (product of products; track $index) {
+    <div class="product-card-container col">
+      <div class="product-card">
+        <div class="product-img">
+          <a href="#">
+            <img [src]="product.image" [alt]="product.title" style="width: 100%; height: 100%;">
+          </a>
+        </div>
+        <a href="#" class="trends-link">
+          <div class="trends">
+            <img src="assets/Screenshot 2025-08-21 114435.png" alt="tend logo">
+            <p class="trend-text">#{{product.category}} ></p>
+          </div>
+        </a>
+        <div class="title-box">
+          <div class="discount" [innerHTML]="getRandomDiscount()">
+          </div>
+          <a href="#" class="title">
+            {{product.title}}
+          </a>
+        </div>
+        <div class="ratting">
+          <app-star-rating [rating]="getStarRating()"></app-star-rating>
+          {{getRandRatingNumber()}}
+        </div>
+        <div class="price-cart-cont">
+          <div class="v-box">
+            <div class="price-sold-box">
+              <p class="price">${{product.price}}</p>
+              <p class="sold">{{getRandomSales() |shortenNumber}}+ sold</p>
+            </div>
+            <div class="extra">
+              @if(getRandom()){
+              <span class="exra-text">Estimated</span>
+              }
+            </div>
+          </div>
+          <div class="cart-btn-cont">
+            <button class="cart-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" style="width:auto;height:1em"
+                viewBox="0 0 20 20">
+                <path fill="#222" fill-rule="evenodd"
+                  d="M2 3.25v1.5h2.14l1.2 9.3h11.703l.961-7.31h-1.513l-.764 5.81H6.66l-1.2-9.3z" clip-rule="evenodd" />
+                <path fill="#222" fill-rule="evenodd"
+                  d="M11.9 4.747h-1.5v1.99h-2v1.5h2v1.99h1.5v-1.99h2v-1.5h-2zM7.33 16.3a1 1 0 1 0-2 0 1 1 0 0 0 2 0M17.05 16.3a1 1 0 1 0-2 0 1 1 0 0 0 2 0"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        @if (getRandom()) {
+          <div class="quick-ship">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" style="width:auto;height:1em"
+              viewBox="0 0 14 14">
+              <path fill="#198055" fill-rule="evenodd"
+                d="M3.998 2.45h7.76l-.681 2.376 2.823.807-1.46 5.048h-1.57c-.291.46-.838.793-1.371.793-.532 0-.888-.332-.916-.792H5.012c-.292.46-.838.791-1.37.791s-.889-.331-.916-.791H1.637l.756-2.634H.09l.322-1.121h6.536l.965-3.365H3.679zm8.88 3.793-2.069-.536-.73 2.313h2.255z"
+                clip-rule="evenodd" />
+              <path fill="#198055" fill-rule="evenodd" d="M6.425 4.683h-4.28l-.323 1.122h4.282z" clip-rule="evenodd" />
+            </svg>
+            <i>QuickShip</i>
+          </div>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</div>
