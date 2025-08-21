@@ -1,29 +1,33 @@
 <div class="stars" [attr.aria-label]="'Rating: ' + rating + ' out of ' + max">
-    <ng-container *ngFor="let idx of starIndexes; let i = index">
-        <!-- FULL -->
-        <svg *ngIf="i < fullCount" class="star full" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-        </svg>
-
-        <!-- HALF -->
-        <svg *ngIf="i === fullCount && hasHalf" class="star half" viewBox="0 0 24 24" aria-hidden="true">
-            <defs>
-                <clipPath [attr.id]="halfId">
-                    <rect x="0" y="0" width="12" height="24"></rect> <!-- left half -->
-                </clipPath>
-            </defs>
-            <!-- empty base -->
-            <path class="empty"
-                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-            <!-- filled half overlay -->
-            <path class="full-fill" [attr.clip-path]="'url(#' + halfId + ')'"
-                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-        </svg>
-
+  @for (idx of starIndexes; track idx; let i = $index) {
+    <!-- FULL -->
+    @if (i < fullCount) {
+      <svg class="star full" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+      </svg>
+    }
+    <!-- HALF -->
+    @if (i === fullCount && hasHalf) {
+      <svg class="star half" viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <clipPath [attr.id]="halfId">
+            <rect x="0" y="0" width="12" height="24"></rect> <!-- left half -->
+          </clipPath>
+        </defs>
+        <!-- empty base -->
+        <path class="empty"
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          <!-- filled half overlay -->
+          <path class="full-fill" [attr.clip-path]="'url(#' + halfId + ')'"
+            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        }
         <!-- EMPTY -->
-        <svg *ngIf="i > fullCount || (i === fullCount && !hasHalf)" class="star empty" viewBox="0 0 24 24"
+        @if (i > fullCount || (i === fullCount && !hasHalf)) {
+          <svg class="star empty" viewBox="0 0 24 24"
             aria-hidden="true">
             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-        </svg>
-    </ng-container>
-</div>
+          </svg>
+        }
+      }
+    </div>

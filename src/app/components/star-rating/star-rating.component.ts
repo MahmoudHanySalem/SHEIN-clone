@@ -1,11 +1,11 @@
 // src/app/shared/star-rating.component.ts
 import { Component, Input } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-star-rating',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [],
   templateUrl: './star-rating.component.html',
   styleUrls: ['./star-rating.component.css'],
 })
