@@ -2,6 +2,8 @@
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
+@import '@angular/cdk/overlay-prebuilt.css';
+
 
 .mySwiper {
   width: 100%;

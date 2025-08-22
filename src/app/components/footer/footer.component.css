@@ -1,4 +1,295 @@
-footer{
+footer {
     background-color: #FAFAFA;
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.left-footer,
+.right-footer {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.left-footer {
+    margin-left: 6.5rem;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-left {
+    width: 420px;
+    height: 400px;
+    margin-right: 180px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list a {
+    color: #666666;
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.info-list p {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.bot-left {
+    width: 600px;
+    padding-right: 8px;
+    color: #666666;
+    font-size: 12px;
+}
+
+.bot-left a {
+    color: #666666;
+}
+
+.rights {
+    margin-bottom: 0;
+}
+
+.divider {
+    border-left: 1px solid #666;
+    height: 14px;
+    /* matches text height */
+    margin: 0 5px;
+}
+
+.popup {
+    width: 480px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0px;
+}
+
+.popup h5 {
+    color: black;
+    padding-bottom: 1.5rem;
+    margin: 0;
+}
+
+.country-list-container {
+    width: 416px;
+    height: 256px;
+    overflow-y: auto;
+    /* vertical scrollbar */
+    border: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+}
+
+.country-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.country-list li {
+    padding: 10px;
+    cursor: pointer;
+    width: 399px;
+    height: 34px;
+}
+
+.country-list li:hover {
+    background-color: #f5f5f5;
+}
+
+.country-list li.selected {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    width: 416px;
+}
+
+.actions .cancel {
+    background: white;
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 8px 16px;
+    cursor: pointer;
+    width: 198px;
+    height: 49px;
+}
+
+.actions .confirm {
+    background: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    cursor: pointer;
+    width: 198px;
+    height: 49px;
+}
+
+.to-top-btn {
+    position: fixed;
+    right: 9px;
+    bottom: 14px;
+}
+
+.to-top-btn button {
+    border: none;
+    background-color: black;
+    width: 36px;
+    height: 36px;
+}
+
+.to-top-btn button svg {
+    color: white;
+}
+
+.right-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-right {
+    display: flex;
+    width: 600px;
+}
+
+.social-links-box,
+.download-links-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+.social-links-box {
+    width: 61%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.download-links-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-links,
+.download-links {
+    display: flex;
+    gap: 7px;
+}
+
+fa-icon {
+    color: black;
+    font-size: 30px;
+}
+
+.mid-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-head {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-box,
+.number-box {
+    width: 600px;
+    height: 36px;
+}
+
+.sub-button {
+    border: none;
+    background-color: black;
+    color: white;
+    height: 36px;
+    width: 144px;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    bottom: 1.5px;
+}
+
+.sub-button:hover {
+    background-color: #666;
+    border-color: #666;
+}
+
+.numbers-dropdown {
+    width: 80px;
+    height: 36px;
+    font-size: 12px;
+    color: #666;
+    background-color: transparent;
+    border: 1px solid #E5E5E5;
+    position: relative;
+    bottom: 2px;
+    border-right: none;
+}
+
+.numbers-dropdown img {
+    width: 8px;
+    height: 8px;
+}
+
+.email-box input,
+.number-box input {
+    border: 1px solid #E5E5E5;
+    height: 36px;
+    padding: 0 12px;
+}
+
+.email-box input:focus,
+.number-box input:focus {
+    outline: none;
+
+}
+
+.email-box input {
+    width: 456px;
+}
+
+.number-box input {
+    width: 376px;
+}
+.rights{
+    width: 95%;
+    height: 27.5px;
+    font-size: 12px;
+    color: #666666;
+    margin-top: 20px;
+}
+.Error{
+    font-size: 12px;
+    color: red;
 }
