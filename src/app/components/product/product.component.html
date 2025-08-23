@@ -1,0 +1,379 @@
+<main>
+    <div class="main-container">
+        <div class="img-swiper-cont">
+            <swiper-container class="mySwiper" navigation="true" loop="true" style="--swiper-navigation-size: 16px;">
+                <!-- Slide 1 -->
+                <swiper-slide>
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <div class="">
+                                    <a>
+                                        <img [src]="product.image" class="swiper-img" alt="Product img 1">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+
+                <!-- Slide 2 -->
+                <swiper-slide>
+                    <div class="">
+                        <a>
+                            <img src="assets/Screenshot 2025-08-20 222706.png" class="swiper-img" alt="Product img 2">
+                        </a>
+                    </div>
+                </swiper-slide>
+                <!-- Slide 3 -->
+                <swiper-slide>
+                    <div class="">
+                        <a>
+                            <img src="assets/Screenshot 2025-08-20 222730.png" class="swiper-img" alt="Product img 3">
+                        </a>
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+        <div class="info-container">
+            <div class="title-price-box">
+                <div class="product-title-box">
+                    <p>{{product.title}}</p>
+                    <button class="share-btn">
+                        <svg style="width:24px;height:24px;" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9 5.5V3.5H3.5V20.5H20.5V15H18.5V18.5H5.5V5.5H9ZM20.5 10V3.5H14V5.5H17.084L10.2041 12.3817L11.6183 13.7959L18.5 6.914V10H20.5Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="sn-box">
+                    <div class="sn">
+                        <p>SKU:{{sn}}</p>
+                        <button class="copy-btn" (click)="snCopy()">
+                            <svg style="width:12px;height:12px;" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11 1V9H9V11H1V3H3V1H11ZM8 4H2V10H8V4ZM10 2H4V3H9V8H10V2Z" fill="#2D68A8"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="ratting">
+                        <app-star-rating [rating]="4.5"></app-star-rating>
+                        <span class="ratting-text">
+                            ({{getRandRatingNumber()}} Reviews)
+                        </span>
+                    </div>
+                </div>
+                <div class="price-box">
+                    <div class="price">
+                        $<span class="pricelarged">{{integerPart}}</span>.{{fractionalPart}}
+                    </div>
+                    <div class="previous-price">
+                        {{getRandomDiscount()}}
+                    </div>
+                    <div class="discount-perc">
+                        -{{(randomDiscountPercentage*100).toFixed(0)}}%
+                    </div>
+                </div>
+                <div class="retail">
+                    <p>Pay now or in 4 payments of $2.37</p>
+                    <div class="klama">
+                        <img src="assets/Screenshot 2025-08-22 203045.png" alt="klama logo">
+                    </div>
+                    <a href="https://us.shein.com/Klarna-a-1011.html" class="klama-link">
+                        <svg style="width:14px;height:14px;" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.23466 4.26758C8.61269 3.1903 7.23518 2.82119 6.15789 3.44316C5.38562 3.88904 4.97728 4.72319 5.0371 5.55667H6.04203C5.97836 5.06978 6.20614 4.57001 6.65789 4.30919C7.25688 3.96336 8.02281 4.16859 8.36864 4.76758C8.71446 5.36657 8.50923 6.13249 7.91024 6.47832L7.75431 6.57555C7.04598 7.05138 6.61184 7.83107 6.57184 8.67632L6.57183 8.73191H7.57128V8.69995L7.58545 8.55198C7.65566 8.06185 7.95361 7.60798 8.41024 7.34435L8.5412 7.26274C9.51656 6.60811 9.83072 5.29997 9.23466 4.26758Z"
+                                fill="currentColor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.57155 9.7319L6.57129 10.6984H7.57128V9.7319H6.57155Z" fill="currentColor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1ZM7 2C4.23858 2 2 4.23858 2 7C2 9.76142 4.23858 12 7 12C9.76142 12 12 9.76142 12 7C12 4.23858 9.76142 2 7 2Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="tags">
+                    <a class="tag">
+                        30% OFF For orders $9.90+
+                    </a>
+                    <a class="tag">
+                        30% OFF For orders $9.90+
+                    </a>
+                </div>
+                <div class="shein-club">
+                    <a href="#">
+                        <div class="a-left">
+                            <img src="assets/171194167167d647772a8a47e718f052dc39fad6f2.png" alt="shein club logo">
+                            <p>Save <span class="price-in-text">$0.47</span> off this item after joining</p>
+                        </div>
+                        <div class="a-right">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="width: 12px; height: 12px;">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.85359 2.11084L8.74268 5.99993L4.85359 9.88901L4.14648 9.18191L7.32804 5.99993L4.14648 2.81795L4.85359 2.11084Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="dotted-hr"></div>
+
+            <form [formGroup]="cartForm" (ngSubmit)="cartSubmet($event)">
+                <div class="color-box">
+                    <div class="color-header">
+                        <div>
+                            <span class="colorName">Color: </span>{{selectedColor}}
+                        </div>
+                        <div class="large-img-btn">
+                            <button>
+                                Large image
+                            </button>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        @for (color of colors; track $index) {
+                        <input type="button" class="color" [class.active-color]="color === selectedColor"
+                            [style.backgroundColor]="true? color : 'transparent'" (click)="setColor(color)" />
+                        }
+                    </div>
+                </div>
+
+                <div class="size-box">
+                    <div class="size-header">
+                        Size
+                        <button class="size-dropdown-btn" (click)="btnClicked()">
+                            US Size
+                            <svg [ngClass]="{
+                            'size-dropdown-btn-hoverd' : sizeBtnHover,'' : !sizeBtnHover}" #arrow
+                                style="width:auto;height:1em;" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.7712 4.89648L11.4783 5.60359L6.99995 10.0819L2.52161 5.60359L3.22871 4.89648L6.99995 8.66804L10.7712 4.89648Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </button>
+                        <div class="sizeError disabled" id="sizeError">
+                            Please choose Size
+                        </div>
+                    </div>
+                    <div class="sizes container row row-cols-4">
+                        <div class="size" (click)="setSize('36 (S)')">
+                            36 (S)
+                        </div>
+                        <div class="size" (click)="setSize('38 (M)')">
+                            38 (M)
+                        </div>
+                        <div class="size" (click)="setSize('40 (L)')">
+                            40 (L)
+                        </div>
+                        <div class="size" (click)="setSize('42 (XL)')">
+                            42 (XL)
+                        </div>
+                        <div class="size" (click)="setSize('44 (XXL)')">
+                            44 (XXL)
+                        </div>
+                    </div>
+                    <div class="guide-box">
+                        <button>
+                            <svg style="width:18px;height:18px;" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="9" cy="9" r="8" fill="#173466"></circle>
+                                <path
+                                    d="M7.55971 6.47764L8.40838 7.32631L9.8143 5.92038L10.6492 6.75524L9.79359 7.61081L10.6423 8.45948L11.4978 7.6039L12.3334 8.43945L10.9274 9.84538L11.7761 10.694L13.182 9.28812L14.5072 10.6133L10.8667 14.2537L4.00001 7.38708L7.6405 3.74658L8.96564 5.07172L7.55971 6.47764Z"
+                                    fill="white"></path>
+                            </svg>
+                            Size Guide
+                        </button>
+                    </div>
+                </div>
+                <div class="cart-cont">
+                    <div class="cart-btn-box">
+                        <button class="cart-btn" type="submit">
+                            ADD TO CART
+                            <span class="cart-btn-small">{{(randomDiscountPercentage*100).toFixed(0)}}% off
+                                discount</span>
+                        </button>
+                        <button class="fav-btn">
+                            <svg style="width:32;height:32;" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M15.1294 5.99275C12.2065 3.27396 7.6325 3.33719 4.78644 6.18243C1.87569 9.09317 2.04563 13.2328 4.78644 16.7221C5.08873 17.1069 5.46075 17.5433 5.88344 18.0151L6.41377 18.5973C6.50581 18.6968 6.59957 18.7975 6.69489 18.8992L7.28447 19.521L7.90439 20.1613L8.54733 20.8142L9.53892 21.8034L10.0124 22.2696L11.0539 23.2833L12.2627 24.443L14.3606 26.4202L16 27.9356L18.4446 25.6661L20.946 23.2833L22.461 21.8034L23.4526 20.8142L24.0955 20.1613L24.7155 19.521L25.305 18.8992C25.4004 18.7975 25.4941 18.6968 25.5861 18.5973L26.1165 18.0151C26.5392 17.5433 26.9112 17.1069 27.2135 16.7221C29.9543 13.2328 30.1242 9.09317 27.2135 6.18243C24.3027 3.27252 19.5846 3.27252 16.6739 6.18243L16 6.85633L15.3261 6.18243L15.1294 5.99275ZM18.2685 7.42416C20.4084 5.46936 23.7289 5.52686 25.7995 7.59685C27.887 9.68439 27.8524 12.6709 25.6407 15.4866C25.5974 15.5417 25.5523 15.5982 25.5054 15.6563L25.2024 16.0219L24.8571 16.4216L24.4709 16.8541L24.045 17.3182L23.581 17.8127L23.08 18.3364L22.2622 19.1739L21.6747 19.765L20.5844 20.8444L19.7953 21.6138C18.7299 22.6468 17.6159 23.7046 16.5028 24.7451L16 25.213L14.6629 23.9621C13.5523 22.9155 12.4529 21.8618 11.4128 20.8417L10.9421 20.3782L10.0256 19.4645L9.42081 18.8516L8.85462 18.2687L8.32866 17.7173L7.84457 17.1991L7.40396 16.7154L7.00845 16.2677L6.65966 15.8576C6.55137 15.7274 6.45114 15.6036 6.35923 15.4866C4.14747 12.6709 4.1129 9.68439 6.20045 7.59685C8.33019 5.46772 11.7823 5.46772 13.9121 7.59685L16 9.68476L18.0881 7.59664L18.2685 7.42416Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="cart-info">Earn up to <span class="number-text">9</span> SHEIN Points calculated at
+                        checkout.</p>
+                </div>
+            </form>
+            <div class="shipping-box">
+                <p class="shipping-header">
+                    <span class="ship-title">Shipping to</span> {{country}}
+                </p>
+                <button class="shipping-details-btn">
+                    <div class="logo-box">
+                        <svg class="head-svg" style="width: 24px; height: 24px;" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" fill="white" fill-opacity="0.01"></rect>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.4086 6.92012V4H3.01044V8.64506V14.2934V18.4515H4.76135C5.24011 16.7751 6.78359 15.5479 8.61371 15.5479C10.4438 15.5479 11.9873 16.7751 12.4661 18.4515H13.6171C14.0958 16.7751 15.6393 15.5479 17.4694 15.5479C19.2996 15.5479 20.8431 16.7752 21.3218 18.4517H22.5697V8.60743L17.4086 6.92012ZM17.4086 12.4516V9.02453L20.5692 10.0576V12.4516H17.4086Z"
+                                fill="#198055"></path>
+                            <circle cx="17.5168" cy="19.554" r="2" fill="#198055"></circle>
+                            <circle cx="8.61353" cy="19.554" r="2" fill="#198055"></circle>
+                        </svg>
+                    </div>
+                    <div class="box-text">
+                        <div class="shipping-details-btn-top">
+                            Free Shipping (Orders ≥ $15.00)
+                            <svg style="width: 14px; height: 14px;" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13C10.3137 13 13 10.3137 13 7ZM9.23463 4.26758C8.61266 3.1903 7.23514 2.8212 6.15786 3.44317C5.38559 3.88904 4.97725 4.7232 5.03707 5.55668H6.042C5.97833 5.06978 6.20611 4.57001 6.65786 4.30919C7.25685 3.96336 8.02278 4.16859 8.3686 4.76758C8.71443 5.36657 8.5092 6.1325 7.91021 6.47832L7.75428 6.57555C7.04595 7.05139 6.61181 7.83107 6.57181 8.67632L6.5718 8.73191L7.57125 8.73191L7.57125 8.69996L7.58541 8.55199C7.65563 8.06186 7.95358 7.60799 8.41021 7.34435L8.54116 7.26275C9.51653 6.60811 9.83068 5.29998 9.23463 4.26758ZM6.57152 9.73191H7.57125V10.6984H6.57125L6.57152 9.73191Z"
+                                    fill="#999"></path>
+                            </svg>
+                        </div>
+                        <div class="shipping-details-btn-mid">
+                            Standard Shipping Estimated Delivery: Sep 2 - Sep 10
+                        </div>
+                        <div class="shipping-details-btn-bot">
+                            70.55% are ≤ 8 business days
+                            <svg style="width: 14px; height: 14px;" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.492 4.91295C9.80094 3.71593 8.27032 3.3058 7.07331 3.9969C6.2136 4.49325 5.75979 5.42265 5.82832 6.35048H6.83315C6.76085 5.7692 7.03413 5.17422 7.57331 4.86293C8.29203 4.44797 9.21106 4.69422 9.62601 5.41295C10.041 6.13167 9.79472 7.0507 9.07599 7.46565L8.90193 7.57418C8.11126 8.10533 7.62668 8.97561 7.58203 9.91917L7.58201 9.97932H8.58147V9.9428L8.59625 9.78096C8.67571 9.19117 9.03027 8.64675 9.57599 8.33168L9.71584 8.24479C10.8041 7.51867 11.1555 6.06208 10.492 4.91295Z"
+                                    fill="#959595"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7.58174 10.9793H8.58147V11.9793H7.58147L7.58174 10.9793Z" fill="#959595"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8 1C11.866 1 15 4.13401 15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1ZM8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2Z"
+                                    fill="#959595"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+                <button class="return-btn">
+                    <div class="logo-box">
+                        <svg class="head-svg" style="width:24;height:24;" width="48" height="48" viewBox="0 0 48 48"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M22.7311 32.1047L15.3483 25.9523L22.7311 19.8L24.6517 22.1047L21.7772 24.5H32.5V31H29.5V27.5H21.8916L24.6517 29.8L22.7311 32.1047Z"
+                                fill="#198055"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M44 7.99994V15.9999H41.5V41.4999H6.5V15.9999H4V7.99994H44ZM7 12.9999H41V10.9999H7V12.9999ZM9.5 15.9999V38.4999H38.5V15.9999H9.5Z"
+                                fill="#198055"></path>
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                        </svg>
+                    </div>
+                    <div class="box-text">
+                        <div class="return-btn-top">
+                            Return Policy
+                            <svg style="width: 14px; height: 14px;" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13C10.3137 13 13 10.3137 13 7ZM9.23463 4.26758C8.61266 3.1903 7.23514 2.8212 6.15786 3.44317C5.38559 3.88904 4.97725 4.7232 5.03707 5.55668H6.042C5.97833 5.06978 6.20611 4.57001 6.65786 4.30919C7.25685 3.96336 8.02278 4.16859 8.3686 4.76758C8.71443 5.36657 8.5092 6.1325 7.91021 6.47832L7.75428 6.57555C7.04595 7.05139 6.61181 7.83107 6.57181 8.67632L6.5718 8.73191L7.57125 8.73191L7.57125 8.69996L7.58541 8.55199C7.65563 8.06186 7.95358 7.60799 8.41021 7.34435L8.54116 7.26275C9.51653 6.60811 9.83068 5.29998 9.23463 4.26758ZM6.57152 9.73191H7.57125V10.6984H6.57125L6.57152 9.73191Z"
+                                    fill="#999"></path>
+                            </svg>
+                        </div>
+                        <div class="return-btn-bot">
+                            Free Return & Exchange
+                        </div>
+                    </div>
+                </button>
+                <button class="security-btn">
+                    <div class="logo-box">
+                        <svg class="head-svg" style="width:24;height:24;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.9718 9.77253L15.4476 8.4777L11.3724 13.274L8.17984 10.6854L6.92024 12.2389L11.6317 16.0589L16.9718 9.77253Z"
+                                fill="#198055"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M21.6305 4.98486L11.9994 0.914062L2.41368 4.97874L2.38343 5.60605C2.27318 7.89188 2.34505 10.168 2.59902 12.434L2.65097 12.8847L2.75641 13.7228C2.7919 13.9882 2.82774 14.2395 2.86395 14.4768C3.12183 16.1674 3.98828 17.7055 5.30045 18.8021L5.65733 19.0978C8.07722 21.0858 10.0646 22.3651 11.6608 22.9407L12 23.063L12.3392 22.9407C14.0351 22.3292 16.1089 20.997 18.5953 18.9432C19.7483 17.9909 20.5667 16.6952 20.9314 15.2449L21.0539 14.7254C21.2154 13.9925 21.3392 13.2334 21.4288 12.434C21.6207 10.722 21.6961 8.64587 21.6565 6.20185L21.6305 4.98486ZM11.9994 3.08599L19.6574 6.32199L19.6636 6.76927C19.6834 8.90083 19.6089 10.7158 19.4413 12.2112C19.3593 12.9426 19.2468 13.6325 19.1039 14.281L18.9882 14.7718C18.7311 15.794 18.1459 16.7204 17.3217 17.4012L16.9762 17.684C15.0366 19.2565 13.4062 20.3228 12.106 20.8827L12.0014 20.925L11.9236 20.894C10.6338 20.3363 8.9601 19.2228 6.93017 17.5552L6.57978 17.2648C5.64489 16.4835 5.02544 15.3838 4.84108 14.1752L4.7553 13.5801L4.67045 12.9254L4.58657 12.2112L4.50393 11.4008C4.35491 9.77906 4.30354 8.15195 4.34983 6.51922L4.35637 6.32598L11.9994 3.08599Z"
+                                fill="#198055"></path>
+                        </svg>
+                    </div>
+                    <div class="box-text">
+                        <div class="security-btn-top">
+                            Shopping Security
+                            <svg style="width: 14px; height: 14px;" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13C10.3137 13 13 10.3137 13 7ZM9.23463 4.26758C8.61266 3.1903 7.23514 2.8212 6.15786 3.44317C5.38559 3.88904 4.97725 4.7232 5.03707 5.55668H6.042C5.97833 5.06978 6.20611 4.57001 6.65786 4.30919C7.25685 3.96336 8.02278 4.16859 8.3686 4.76758C8.71443 5.36657 8.5092 6.1325 7.91021 6.47832L7.75428 6.57555C7.04595 7.05139 6.61181 7.83107 6.57181 8.67632L6.5718 8.73191L7.57125 8.73191L7.57125 8.69996L7.58541 8.55199C7.65563 8.06186 7.95358 7.60799 8.41021 7.34435L8.54116 7.26275C9.51653 6.60811 9.83068 5.29998 9.23463 4.26758ZM6.57152 9.73191H7.57125V10.6984H6.57125L6.57152 9.73191Z"
+                                    fill="#999"></path>
+                            </svg>
+                        </div>
+                        <div class="security-btn-bot">
+                            <div class="security-elm">
+                                <svg style="width:14px;height:14px;" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.9437 4.68544L6.31456 11.3146L3 8" stroke="#198055" stroke-width="1.5">
+                                    </path>
+                                </svg>
+                                Safe Payments
+                            </div>
+                            <div class="security-elm">
+                                <svg style="width:14px;height:14px;" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.9437 4.68544L6.31456 11.3146L3 8" stroke="#198055" stroke-width="1.5">
+                                    </path>
+                                </svg>
+                                Secure Logistics
+                            </div>
+                            <div class="security-elm">
+                                <svg style="width:14px;height:14px;" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.9437 4.68544L6.31456 11.3146L3 8" stroke="#198055" stroke-width="1.5">
+                                    </path>
+                                </svg>
+                                Customer Service
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                <div class="sourced-box">
+                    <div class="logo-box">
+                        <svg class="head-svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14.5 1.5H1.5V14.5H14.5V1.5ZM13.5 2.5H2.5V6.1L2.51171 6.18873C2.59911 6.88733 3.16423 7.42854 3.85935 7.49346L4 7.5C4.7583 7.5 5.39507 6.93391 5.48829 6.18873L5.54308 5.7508H6.45692L6.51171 6.18873C6.60493 6.93391 7.2417 7.5 8 7.5C8.7583 7.5 9.39507 6.93391 9.48829 6.18873L9.54308 5.7508H10.4569L10.5117 6.18873C10.6049 6.93391 11.2417 7.5 12 7.5C12.7583 7.5 13.3951 6.93391 13.4883 6.18873L13.5 6.092V2.5ZM13.5 8.00006C13.1218 8.28385 12.6614 8.46241 12.1637 8.4947L12 8.5C11.2305 8.5 10.5364 8.15058 10.0759 7.59655L10 7.499L9.92411 7.59655C9.49649 8.11101 8.86743 8.44904 8.16367 8.4947L8 8.5C7.23054 8.5 6.53641 8.15058 6.07589 7.59655L6 7.499L5.92411 7.59655C5.49649 8.11101 4.86743 8.44904 4.16367 8.4947L4 8.5C3.43968 8.5 2.91931 8.31471 2.5 8.00006V13.5H6V10.5H10V13.5H13.5V8.00006ZM9 11.5V13.5H7V11.5H9Z"
+                                fill="#198055"></path>
+                        </svg>
+                    </div>
+                    <div class="box-text">
+                        <div class="sourced-top">
+                        Sourced from <img class="img-in-text"
+                            src="assets/1695622688f6e5d2609db65395677b785314e21895.jpg" alt="logo"> 
+                            EMRGManfinity EMRG
+                    </div>
+                    <div class="sourced-mid">
+                        Sold by and Ships from SHEIN
+                    </div>
+                    <div class="sourced-bot">
+                        <button class="report-btn">
+                            To report this seller and/or product
+                            <svg style="width: 12px; height: 12px;" width="12" height="12" viewBox="0 0 12 12"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.85359 2.11084L8.74268 5.99993L4.85359 9.88901L4.14648 9.18191L7.32804 5.99993L4.14648 2.81795L4.85359 2.11084Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="aligner">
+    <hr class="hr-divider">
+</div>
+<div class="more-box">
+<div class="more-head">Customers Also Viewed</div>
+<app-store></app-store>
+</div>

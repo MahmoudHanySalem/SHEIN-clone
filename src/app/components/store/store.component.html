@@ -4,7 +4,7 @@
     <div class="product-card-container col">
       <div class="product-card">
         <div class="product-img">
-          <a href="#">
+          <a [routerLink]="['/product',product.id]">
             <img [src]="product.image" [alt]="product.title" style="width: 100%; height: 100%;">
           </a>
         </div>
@@ -17,7 +17,7 @@
         <div class="title-box">
           <div class="discount" [innerHTML]="getRandomDiscount()">
           </div>
-          <a href="#" class="title">
+          <a [routerLink]="['/product',product.id]" class="title">
             {{product.title}}
           </a>
         </div>
