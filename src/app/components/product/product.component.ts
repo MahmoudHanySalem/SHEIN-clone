@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit {
 
 
   @Input() id = '';
-  country : string=this.globalService.country;
+  country!:string;
   product!: Product;
   randomDiscountPercentage!: number;
   sn = 'sm25073030275177151';
@@ -43,7 +43,13 @@ export class ProductComponent implements OnInit {
   sizeBtnHover: boolean = false;
   cart : Cart=this.cartManagerService.cart;
 
+storeConfigs = [
+    { cardsNum: 15, startIndex: 0 }
+  ];
 
+  addMore() {
+    this.storeConfigs.push({ cardsNum: 5, startIndex: 15 });
+  }
 
   addProduct(){
     this.cartManagerService.addProduct(Number(this.id));
@@ -64,11 +70,13 @@ export class ProductComponent implements OnInit {
     this.getByClass('sizeError')?.classList.add('disabled');
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.productService.getProductById(Number(this.id)).subscribe((data) => {
       this.product = data;
     });
     this.setColor(this.colors[0]);
+
+    this.country = await this.globalService.getUserCountry();
 }
 
   get integerPart(): string {

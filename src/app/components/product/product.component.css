@@ -660,3 +660,19 @@
     color: #222;
     margin-left: 70px;
 }
+.more-btn-cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+.more-btn{
+    width: 160px;
+    height: 42px;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: none;
+    font-weight: bold;
+}

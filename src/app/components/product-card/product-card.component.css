@@ -1,0 +1,135 @@
+.product-card-container{
+    width: 255.5px;
+    height: 452px;
+    padding: 0;
+}
+.product-card-container:hover{
+    background-color: white;
+    box-shadow:2px 2px 15px gray;
+}
+.product-card{
+    width: 255.5px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-img img{
+    width: 239.5px !important;
+    height: 318.5px !important;
+}
+.trends-link{
+    text-decoration: none;
+}
+.trends{
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+}
+.trends img{
+    width: 44px;
+    height: 16.5px;
+}
+.trends p {
+    margin: 0;
+}
+.trend-text{
+    font-size: 11px;
+    color: #9371F6;
+    background-color: #f4f0fe;
+    border-top-right-radius: 5px ;
+    border-bottom-right-radius: 5px;
+    padding-right: 3px;
+}
+.title-box{
+    display: flex;
+    align-items: flex-end;
+    height: 14px;
+    margin-top: 5px;
+}
+.discount{
+    margin-right: 4px;
+    border-radius: 2px;
+    border: 1px solid #E86D45;
+    color: #E86D45;
+    font-size: 12px;
+    padding: 0px 4px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+}
+.title{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    white-space: nowrap;      /* keep text on one line */
+    overflow: hidden;         /* hide overflowing text */
+    text-overflow: ellipsis;  /* add "..." */
+    line-height: 15px;
+}
+.title:hover{
+    text-decoration: underline !important;
+}
+.ratting{
+    color: #666666;
+    font-size: 12px;
+}
+.price-cart-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.v-box{
+    display: flex;
+    flex-direction: column;
+}
+.price-sold-box{
+    display: flex;
+    align-items: center;
+}
+.price{
+    color: #E86D45;
+    font-size: 16px;
+    margin: 0;
+    margin-right: 7px;
+}
+.sold{
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+}
+.cart-btn{
+    width: 42px;
+    height: 26px;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: transparent;
+    display: grid;
+    place-items: center;
+}
+.cart-btn svg{
+    width: 20px;
+    height: 20px;
+}
+.exra-text{
+    color: #E86D45;
+    font-size: 12px;
+    position: relative;
+    top: -7px;
+}
+.quick-ship{
+    width: 87px;
+    height: 20px;
+    width: fit-content;
+    padding: 0px 5px;
+    background-color: #EFFBF3;
+    color: #3D7E58;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid #CDE3D5;
+    position: relative;
+    bottom: 5px;
+}
+.quick-ship svg{
+    margin-right: 4px;
+}

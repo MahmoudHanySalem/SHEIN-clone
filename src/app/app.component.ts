@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Product, ProductService } from './services/product.service';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -19,4 +19,12 @@ export class AppComponent implements OnInit {
   }
   title = 'SHEIN';
 
+
+  constructor(public router: Router) {}
+
+  hiddenRoutes: string[] = ['/login', '/register', '/cart'];
+
+  shouldShowLayout(): boolean {
+    return !this.hiddenRoutes.includes(this.router.url);
+  }
 }

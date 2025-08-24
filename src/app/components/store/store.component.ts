@@ -1,55 +1,42 @@
-import { Component , inject, OnInit} from '@angular/core';
-import { ProductService ,Product} from '../../services/product.service';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { ProductService, Product } from '../../services/product.service';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
+import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
 import { ShortenNumberPipe } from '../../shorten-number-pipe.pipe';
 import { CartManagerService } from '../../services/cart-manager.service';
 import { Cart } from '../../interfaces/cart';
 import { JsonPipe } from '@angular/common';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-store',
-  imports: [RouterModule, FontAwesomeModule, StarRatingComponent, ShortenNumberPipe,JsonPipe],
+  imports: [
+    RouterModule,
+    FontAwesomeModule,
+    StarRatingComponent,
+    ShortenNumberPipe,
+    JsonPipe,
+    ProductCardComponent,
+  ],
   templateUrl: './store.component.html',
-  styleUrl: './store.component.css'
+  styleUrl: './store.component.css',
 })
-export class StoreComponent implements OnInit{
-  productService : ProductService=inject(ProductService);
-  cartManagerService : CartManagerService = inject(CartManagerService);
-
-  cart : Cart=this.cartManagerService.cart;
-  faStar= faStar;
+export class StoreComponent implements OnInit {
+  @Input() cardsNum?: number;
+  @Input() startIndex: number= 0;
+  productService: ProductService = inject(ProductService);
   products: Product[] = [];
 
-getRandomDiscount(min: number = 10, max: number = 50): string {
-  return  "-" + (Math.round(Math.random() * (max - min + 1) + min)) + "%";
+  ngOnInit() {
+  this.productService.getAllProducts().subscribe((data) => {
+    let limit = this.cardsNum && this.cardsNum > 0 ? this.cardsNum : data.length;
+    let start = this.startIndex ?? 0;
+
+    this.products = data.slice(start, start + limit);
+  });
 }
 
-getStarRating(min: number = 0, max: number = 2): number {
-let values :number[]=[3.5,4,4.5];
-return values[Math.round(Math.random() * (max - min + 1) + min)];
 }
-getRandRatingNumber() : string{
-  let values : string[] =['(100+)', '(1000+)'];
-  return values[Math.round(Math.random() * (1 - 0 + 1) + 0)];
-}
-getRandom(): boolean {
-  return Boolean( Math.random() < 0.7 ? 0 : 1);
-}
-getRandomSales(min: number = 300, max: number = 5000) : number{
-  return Math.round(Math.random() * (max - min + 1) + min);
-}
-ngOnInit() {
-    this.productService.getAllProducts().subscribe(data => {
-      this.products = data;
-    });
-    
-  }
 
-addProduct(id : number){
-    this.cartManagerService.addProduct(Number(id));
-  }
-
-}

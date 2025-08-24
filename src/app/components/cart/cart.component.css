@@ -1,0 +1,165 @@
+body{
+    background-color: #F4F4F4;
+}
+header {
+    flex: 1;
+    background-color: white;
+    padding: 5px 0px;
+    border-bottom: 0.4px solid #ccc;
+}
+
+nav {
+    width: 100%;
+    padding: 0px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ship-to-btn {
+    border: none;
+    background-color: #F6F6F6;
+    color: #666666;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 8px 12px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    color: #3D7E58;
+    font-size: 14px;
+}
+
+.nav-right img {
+    width: 24px;
+    height: 24px;
+}
+
+.free-On-Delivery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px 10px 24px;
+    background-color: #DCE9FD;
+}
+
+.lift-free-on-Delivery {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lift-free-on-Delivery svg {
+    position: relative;
+    bottom: -2px;
+}
+
+.right-free-on-Delivery button {
+    border: none;
+    background-color: transparent;
+}
+
+.right-free-on-Delivery svg {
+    width: 12px;
+    height: 12px;
+}
+
+.cart-body{
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    margin: 0 45px;
+    width: 100%;
+}
+.left-cart-body{
+    width: 883px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 7px;
+}
+.all-btn-cont{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 12px;
+}
+.all-btn-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.select-box{
+
+}
+.free{
+
+}
+.right-cart-body{
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 7px;
+}
+
+
+
+
+
+.operations {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #959595;
+    margin: 20px 0 18px;
+}
+
+.current-stage {
+    color: #222222 !important;
+}
+
+.more-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    background-color: white;
+    padding-top: 10px;
+}
+
+.more-head {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}
+
+.to-top-btn {
+    position: fixed;
+    right: 9px;
+    bottom: 14px;
+}
+
+.to-top-btn button {
+    border: none;
+    background-color: black;
+    width: 36px;
+    height: 36px;
+}
+
+.to-top-btn button svg {
+    color: white;
+}

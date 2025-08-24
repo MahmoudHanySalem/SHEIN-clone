@@ -40,9 +40,11 @@ import { GlobalService } from '../../services/global.service';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
 })
+
 export class FooterComponent {
+
   globalService: GlobalService = inject(GlobalService);
-  country: string = this.globalService.country;
+  country!: string;
   selectedCountry: string = '';
   countryCode: string = 'US +1';
 
@@ -59,15 +61,20 @@ export class FooterComponent {
   faAndroid = faAndroid;
   faApple = faApple;
 
+  @ViewChild(CdkPortal) portal!: CdkPortal;
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.scrolly = window.scrollY; // updates on every scroll
   }
 
-  @ViewChild(CdkPortal) portal!: CdkPortal;
 
   constructor(private overlay: Overlay) {}
   overlayRef!: OverlayRef;
+
+async ngOnInit() {
+    this.country = await this.globalService.getUserCountry();
+  }
 
   popup() {
     this.overlayRef = this.overlay.create({

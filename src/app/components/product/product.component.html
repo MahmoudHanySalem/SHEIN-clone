@@ -346,24 +346,24 @@
                     </div>
                     <div class="box-text">
                         <div class="sourced-top">
-                        Sourced from <img class="img-in-text"
-                            src="assets/1695622688f6e5d2609db65395677b785314e21895.jpg" alt="logo"> 
+                            Sourced from <img class="img-in-text"
+                                src="assets/1695622688f6e5d2609db65395677b785314e21895.jpg" alt="logo">
                             EMRGManfinity EMRG
-                    </div>
-                    <div class="sourced-mid">
-                        Sold by and Ships from SHEIN
-                    </div>
-                    <div class="sourced-bot">
-                        <button class="report-btn">
-                            To report this seller and/or product
-                            <svg style="width: 12px; height: 12px;" width="12" height="12" viewBox="0 0 12 12"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M4.85359 2.11084L8.74268 5.99993L4.85359 9.88901L4.14648 9.18191L7.32804 5.99993L4.14648 2.81795L4.85359 2.11084Z"
-                                    fill="currentColor"></path>
-                            </svg>
-                        </button>
-                    </div>
+                        </div>
+                        <div class="sourced-mid">
+                            Sold by and Ships from SHEIN
+                        </div>
+                        <div class="sourced-bot">
+                            <button class="report-btn">
+                                To report this seller and/or product
+                                <svg style="width: 12px; height: 12px;" width="12" height="12" viewBox="0 0 12 12"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.85359 2.11084L8.74268 5.99993L4.85359 9.88901L4.14648 9.18191L7.32804 5.99993L4.14648 2.81795L4.85359 2.11084Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -374,6 +374,13 @@
     <hr class="hr-divider">
 </div>
 <div class="more-box">
-<div class="more-head">Customers Also Viewed</div>
-<app-store></app-store>
+    <div class="more-head">Customers Also Viewed</div>
+    @for (config of storeConfigs; track $index) {
+    <app-store [cardsNum]="config.cardsNum" [startIndex]="config.startIndex"></app-store>
+    }
+    <div class="more-btn-cont">
+        <button class="more-btn" (click)="addMore()">
+            View More
+        </button>
+    </div>
 </div>
