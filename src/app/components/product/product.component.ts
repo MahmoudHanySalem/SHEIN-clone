@@ -4,10 +4,7 @@ import {
   OnInit,
   inject,
   Input,
-  Renderer2,
-  Inject 
 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
 import { ProductService, Product } from '../../services/product.service';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
 import { NgClass } from '@angular/common';
@@ -17,35 +14,45 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { LocationService } from '../../services/location.service';
 import { StoreComponent } from '../store/store.component';
+import { GlobalService } from '../../services/global.service';
+import { RouterModule } from '@angular/router';
+import { CartManagerService } from '../../services/cart-manager.service';
+import { Cart } from '../../interfaces/cart';
 
 @Component({
   selector: 'app-product',
-  imports: [StarRatingComponent, NgClass, ReactiveFormsModule, StoreComponent],
+  imports: [RouterModule,StarRatingComponent, NgClass, ReactiveFormsModule, StoreComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ProductComponent implements OnInit {
   productService: ProductService = inject(ProductService);
+  globalService : GlobalService = inject(GlobalService);
+  cartManagerService : CartManagerService = inject(CartManagerService);
+
+
   @Input() id = '';
+  country : string=this.globalService.country;
   product!: Product;
   randomDiscountPercentage!: number;
   sn = 'sm25073030275177151';
   colors: string[] = ['black', '#767676', 'rgb(72, 72, 154)', '#E86D45'];
   selectedColor!: string;
   sizeBtnHover: boolean = false;
-  country !: string;
+  cart : Cart=this.cartManagerService.cart;
 
-  constructor(private renderer: Renderer2,
-  @Inject(DOCUMENT) private document: Document,
-  private locationService: LocationService)
-  {}
+
+
+  addProduct(){
+    this.cartManagerService.addProduct(Number(this.id));
+  }
 
   btnClicked() {
     this.sizeBtnHover = !this.sizeBtnHover;
   }
+
 
   setColor(color: string) {
     this.selectedColor = color;
@@ -62,9 +69,6 @@ export class ProductComponent implements OnInit {
       this.product = data;
     });
     this.setColor(this.colors[0]);
-    this.locationService.getUserCountry().subscribe(data => {
-      this.country=data.country_name;
-    });
 }
 
   get integerPart(): string {

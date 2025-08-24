@@ -1,13 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from './product.service';
+import { Cart } from '../interfaces/cart';
 
-export interface Cart{
-  id : number,
-userId : number,
-products : Product[]
-}
 
 @Injectable({
   providedIn: 'root'

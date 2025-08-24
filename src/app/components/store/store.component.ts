@@ -5,17 +5,23 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
 import { ShortenNumberPipe } from '../../shorten-number-pipe.pipe';
+import { CartManagerService } from '../../services/cart-manager.service';
+import { Cart } from '../../interfaces/cart';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-store',
-  imports: [RouterModule, FontAwesomeModule, StarRatingComponent, ShortenNumberPipe],
+  imports: [RouterModule, FontAwesomeModule, StarRatingComponent, ShortenNumberPipe,JsonPipe],
   templateUrl: './store.component.html',
   styleUrl: './store.component.css'
 })
 export class StoreComponent implements OnInit{
-  products: Product[] = [];
   productService : ProductService=inject(ProductService);
+  cartManagerService : CartManagerService = inject(CartManagerService);
+
+  cart : Cart=this.cartManagerService.cart;
   faStar= faStar;
+  products: Product[] = [];
 
 getRandomDiscount(min: number = 10, max: number = 50): string {
   return  "-" + (Math.round(Math.random() * (max - min + 1) + min)) + "%";
@@ -40,6 +46,10 @@ ngOnInit() {
       this.products = data;
     });
     
+  }
+
+addProduct(id : number){
+    this.cartManagerService.addProduct(Number(id));
   }
 
 }

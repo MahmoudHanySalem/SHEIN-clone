@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="cart-btn-cont">
-            <button class="cart-btn">
+            <button class="cart-btn" (click)="addProduct(product.id)">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" style="width:auto;height:1em"
                 viewBox="0 0 20 20">
                 <path fill="#222" fill-rule="evenodd"
@@ -67,3 +67,8 @@
     }
   </div>
 </div>
+@if(cartManagerService.cart){
+  <div>
+    {{ cart | json }}
+  </div>
+}
